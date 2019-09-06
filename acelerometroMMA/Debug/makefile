@@ -77,7 +77,7 @@ all: acelerometroMMA.elf secondary-outputs
 acelerometroMMA.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross ARM C++ Linker'
-	arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "C:/Users/vcruz/workspace.kds/acelerometroMMA/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Users/vcruz/workspace.kds/acelerometroMMA/Project_Settings/Linker_Files" -Wl,-Map,"acelerometroMMA.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "acelerometroMMA.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-g++ -mcpu=cortex-m0plus -mthumb -O0 -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -Wall  -g3 -T "C:/Repositorio_ITA/FRDM-KL25Z-ACELEROMETRO/acelerometroMMA/Project_Settings/Linker_Files/ProcessorExpert.ld" -Xlinker --gc-sections -L"C:/Repositorio_ITA/FRDM-KL25Z-ACELEROMETRO/acelerometroMMA/Project_Settings/Linker_Files" -Wl,-Map,"acelerometroMMA.map" -specs=nosys.specs -specs=nano.specs -Xlinker -z -Xlinker muldefs -o "acelerometroMMA.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

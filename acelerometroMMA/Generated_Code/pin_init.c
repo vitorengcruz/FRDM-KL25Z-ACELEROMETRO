@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : KSDK 1.3.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-09-06, 16:00, # CodeGen: 1
+**     Date/Time   : 2019-09-06, 19:01, # CodeGen: 3
 **     Abstract    :
 **
 **     Settings    :
@@ -986,9 +986,6 @@ void init_gpio_pins(uint32_t instance)
 {
   switch(instance) {    
     case GPIOE_IDX:                     /* GPIOE_IDX */
-      /* Affects PORTE_PCR24 register */
-      PORT_HAL_SetMuxMode(PORTE,24UL,kPortMuxAsGpio);
-      PORT_HAL_SetPullCmd(PORTE,24UL,true);
       /* Affects PORTE_PCR29 register */
       PORT_HAL_SetMuxMode(PORTE,29UL,kPortMuxAsGpio);
       break;
@@ -1006,7 +1003,6 @@ void deinit_gpio_pins(uint32_t instance)
 {
   switch(instance) {    
     case GPIOE_IDX:                     /* GPIOE_IDX */
-      PORT_HAL_SetMuxMode(PORTE,24UL,kPortPinDisabled);
       PORT_HAL_SetMuxMode(PORTE,29UL,kPortPinDisabled);
       break;
     default:
@@ -1023,8 +1019,8 @@ void init_i2c_pins(uint32_t instance)
 {
   switch(instance) {    
     case I2C0_IDX:                      /* I2C0_IDX */
-      /* Affects PORTB_PCR0 register */
-      PORT_HAL_SetMuxMode(PORTB,0UL,kPortMuxAlt2);
+      /* Affects PORTE_PCR24 register */
+      PORT_HAL_SetMuxMode(PORTE,24UL,kPortMuxAlt5);
       /* Affects PORTE_PCR25 register */
       PORT_HAL_SetMuxMode(PORTE,25UL,kPortMuxAlt5);
       break;
@@ -1042,7 +1038,7 @@ void deinit_i2c_pins(uint32_t instance)
 {
   switch(instance) {    
     case I2C0_IDX:                      /* I2C0_IDX */
-      PORT_HAL_SetMuxMode(PORTB,0UL,kPortPinDisabled);
+      PORT_HAL_SetMuxMode(PORTE,24UL,kPortPinDisabled);
       PORT_HAL_SetMuxMode(PORTE,25UL,kPortPinDisabled);
       break;
     default:

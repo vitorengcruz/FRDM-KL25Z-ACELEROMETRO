@@ -7,7 +7,7 @@
 **     Version     : Component 1.3.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.3.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-09-06, 16:00, # CodeGen: 1
+**     Date/Time   : 2019-09-06, 19:01, # CodeGen: 3
 **     Contents    :
 **         GPIO_DRV_Init            - void GPIO_DRV_Init(const gpio_input_pin_user_config_t * inputPins,const...
 **         GPIO_DRV_InputPinInit    - void GPIO_DRV_InputPinInit(const gpio_input_pin_user_config_t * inputPin);
@@ -80,7 +80,6 @@ extern const gpio_output_pin_user_config_t gpio1_OutConfig0[];
 
 /*! @brief Pin names */
 enum _gpio1_pinNames{
-  ACCEL_SCL = GPIO_MAKE_PIN(GPIOE_IDX, 24U),
   J10_9 = GPIO_MAKE_PIN(GPIOE_IDX, 29U),
 };
 
