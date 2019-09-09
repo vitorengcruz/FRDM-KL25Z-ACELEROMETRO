@@ -7,7 +7,7 @@
 **     Version     : Component 1.3.0, Driver 01.00, CPU db: 3.00.000
 **     Repository  : KSDK 1.3.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-09-06, 19:01, # CodeGen: 3
+**     Date/Time   : 2019-09-08, 20:23, # CodeGen: 8
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -55,6 +55,12 @@
 #include <stdbool.h>
 
 const gpio_input_pin_user_config_t gpio1_InpConfig0[] = {
+  {
+    .pinName = ACCEL_INT1,
+    .config.isPullEnable = false, 
+    .config.isPassiveFilterEnabled = true,
+    .config.interrupt = kPortIntDisabled
+  },
   {
     .pinName = GPIO_PINS_OUT_OF_RANGE,
   }

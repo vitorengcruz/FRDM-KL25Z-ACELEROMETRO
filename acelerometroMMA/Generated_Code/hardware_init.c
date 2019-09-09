@@ -7,7 +7,7 @@
 **     Version     : Component 1.2.0, Driver 1.4, CPU db: 3.00.000
 **     Repository  : KSDK 1.3.0
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-09-06, 19:01, # CodeGen: 3
+**     Date/Time   : 2019-09-06, 19:30, # CodeGen: 4
 **     Abstract    :
 **
 **     Settings    :
@@ -976,12 +976,13 @@
 void hardware_init(void) {
 
   /* Enable clock for PORTs */
-  SIM_HAL_EnableClock(SIM,kSimClockGatePortE);
   SIM_HAL_EnableClock(SIM,kSimClockGatePortA);
+  SIM_HAL_EnableClock(SIM,kSimClockGatePortE);
 
   /* Setup board clock source. */
   g_xtal0ClkFreq = 8000000U;            /* Value of the external crystal or oscillator clock frequency of the system oscillator (OSC) in Hz */
   
+  init_gpio_pins(GPIOA_IDX);
   init_gpio_pins(GPIOE_IDX);
   init_i2c_pins(I2C0_IDX);
   init_osc_pins(OSC0_IDX);

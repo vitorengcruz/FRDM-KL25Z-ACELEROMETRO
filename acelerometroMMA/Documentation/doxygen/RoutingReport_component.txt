@@ -188,7 +188,7 @@
 			</tr>
 			<tr>
 				<td>34</td><td>PTA14/SPI0_PCS0/UART0_TX</td><td>ACCEL_INT1</td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port14</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
 			</tr>
 			<tr>
 				<td>35</td><td>PTA15/SPI0_SCK/UART0_RX</td><td>ACCEL_INT2</td>
@@ -1478,7 +1478,7 @@
 			</tr>
 			<tr>
 				<td>34</td><td>PTA14/SPI0_PCS0/UART0_TX</td><td>ACCEL_INT1</td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F7DCFF'>GPIOA</td><td bgcolor='#F7DCFF'>port14</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
 			</tr>
 			<tr>
 				<td>35</td><td>PTA15/SPI0_SCK/UART0_RX</td><td>ACCEL_INT2</td>

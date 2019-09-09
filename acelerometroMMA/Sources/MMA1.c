@@ -174,8 +174,8 @@ uint8_t MMA1_Deinit(void)
 */
 uint8_t MMA1_Init(void)
 {
-  static const uint8_t addr = MMA1_OUT_X_MSB;
-  static const uint8_t val = MMA1_ACTIVE_BIT_MASK;
+  static const uint8_t addr = MMA1_CTRL_REG_1;
+  static const uint8_t val = MMA1_ACTIVE_BIT_MASK | MMA1_F_READ_BIT_MASK;
 
   sCalValues.NxOff = InitialCalibration.NxOff;
   sCalValues.NyOff = InitialCalibration.NyOff;
@@ -731,7 +731,7 @@ uint8_t MMA1_WhoAmI(uint8_t *value)
 */
 uint8_t MMA1_ReadReg8(uint8_t addr, uint8_t *val)
 {
-  if( I2C_DRV_MasterReceiveDataBlocking( I2C0_IDX, &mma8451_parameters, (uint8_t*)&addr, sizeof(addr), (uint8_t*)&val, sizeof(val), 20 ) ) {
+  if( I2C_DRV_MasterReceiveDataBlocking( I2C0_IDX, &mma8451_parameters, (uint8_t*)&addr, sizeof(addr), (uint8_t*)val, sizeof(*val), 20 ) ) {
   //if (I2C_DRV_MasterReceiveDataBlocking(MMA1_I2C_ADDR, addr, val)!=kStatus_I2C_Success) {
     return kStatus_I2C_Fail;
   }

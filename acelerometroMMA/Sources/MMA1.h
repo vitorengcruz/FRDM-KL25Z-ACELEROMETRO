@@ -111,8 +111,13 @@
 #define MMA1_ACTIVE_BIT_MASK 0x01
 #define MMA1_F_READ_BIT_MASK 0x02
 
+#define MMA1_SYS_MODE_REG	0x0B
+
 #define MMA1_CTRL_REG_2 0x2B
 #define MMA1_CTRL_REG_2_MASK_RST (1<<4) /* software reset */
+
+#define MMA1_CTRL_REG_4 0x2D
+#define MMA1_CTRL_REG_5 0x2E
 
 /* External 3-axis accelerometer data register addresses */
 #define MMA1_OUT_X_MSB 0x01
